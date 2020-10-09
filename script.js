@@ -4,19 +4,28 @@
 const sketchPad = document.getElementById('sketchPadContainer')
 var w = document.getElementById('width'); //Width of sketch pad that user can adjust
 var h = document.getElementById('height'); //Height of sketch pad that user can adjust
-var newGrid = document.getElementById('newGrid')
-
+var gridSquares = document.getElementsByClassName('squares')
+var squares= w*h;
 //
 // create function which generates grid
-function generateGrid(w, h) {
-    var i;
+function generateGrid(squares) {
+function deletGrid {
     
-    for (i = 1; i == (w * h); i++) {//CREATE w*h divs
-        const square = document.createElement("DIV");
-        square.innerHTML = i;
-        sketchPad.appendChild(square);  //Add square to sketchpad grid
-                                    
 
+
+
+
+ }
+
+
+} // delete old grid before creating new grid    
+    var i;
+    for (i=0; i < 5; i++) {//CREATE w*h divs//
+        const square = document.createElement("div");
+        square.textContent = '1';
+        square.classList.add('square')
+        sketchPad.appendChild(square);  //Add square to sketchpad grid
+         
     }
 }
 
