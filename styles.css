@@ -1,5 +1,27 @@
 #sketchPadContainer {
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto, auto, auto, auto;
+    grid-area: sketchPad;
+    border: solid blue
     
 }
+
+body {
+   display:grid;
+   grid-template-columns: 800px;
+   align-items: center;
+   grid-template-areas: 
+   'sketchPad sketchPad sketchPad sketchPad options';
+   
+}
+
+ .dimension {
+    width: 20px;
+    
+}
+
+#optionsContainer {
+grid-area:options
+
+}
+
