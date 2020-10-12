@@ -12,7 +12,7 @@ var i;
 //  
 
 
-function deletGrid(totalSquares) { //Deletes current grid elements 
+function deleteGrid(totalSquares) { //Deletes current grid elements 
     for (i = totalSquares +1; i > 0; i--) {
         sketchPad.removeChild(sketchPad.firstChild);
 }
