@@ -5,29 +5,29 @@ const sketchPad = document.getElementById('sketchPadContainer')
 var w = document.getElementById('width'); //Width of sketch pad that user can adjust
 var h = document.getElementById('height'); //Height of sketch pad that user can adjust
 var gridSquares = document.getElementsByClassName('squares')
-var squares= w*h;
-//
+var totalSquares = w * h;
+var i;
+
 // create function which generates grid
-function generateGrid(squares) {
-function deletGrid {
-    
+//  
 
 
-
-
- }
-
-
-} // delete old grid before creating new grid    
-    var i;
-    for (i=0; i < 5; i++) {//CREATE w*h divs//
-        const square = document.createElement("div");
-        square.textContent = '1';
-        square.classList.add('square')
-        sketchPad.appendChild(square);  //Add square to sketchpad grid
-         
-    }
+function deletGrid(totalSquares) { //Deletes current grid elements 
+    for (i = totalSquares +1; i > 0; i--) {
+        sketchPad.removeChild(sketchPad.firstChild);
 }
+}
+
+function generateGrid(totalSquares) { //function which generates grid from input w and h
+for (i = 0; i < totalSquares; i++) {
+    const newSquare = document.createElement("div"); //Creats square
+    newSquare.textContent = '1'; //Will delete last, using this to visuallly function
+    newSquare.classList.add('square')
+    sketchPad.appendChild(newSquare);  //Add square to sketchpadContainer
+
+}
+}
+
 
 
 
