@@ -2,29 +2,30 @@
 //Create a variable for sketch pad area
 
 const sketchPad = document.getElementById('sketchPadContainer')
-var w = document.getElementById('width'); //Width of sketch pad that user can adjust
-var h = document.getElementById('height'); //Height of sketch pad that user can adjust
-var gridSquares = document.getElementsByClassName('squares')
-var i;
+var w = 0; //Width of sketch pad that user can adjust
+var h = 0; //Height of sketch pad that user can adjust
+var totalSquares = 10;
 generateGrid(10); //grid displayed when page is opened
 
 //event listener on newGrid button
-//run function deleteGrid to clear current grid
-//submit width to w var on click
-//submit height to h var on click
-//convert w to integer
-//convert h to integer
-//run function to generateGrid using 
+document.getElementById("newGrid").addEventListener('click', () => {
+    deleteGrid(); //run function deleteGrid to clear current grid
+    const gridForm = document.forms.gridSizeForm;//Select grid form element assign to gridForm var
+    w = Number(gridForm.elements.width.value);//Convert width form value to number and assign to w
+    h = Number(gridForm.elements.height.value);//Convert height form value to number and assign to h
+    totalSquares = w * h;                       //multiple w by h and assign to totalSquares
+    generateGrid(totalSquares); //run function generateGrid using totalSquares as input 
+});
 
 
 function deleteGrid() { //Deletes current grid elements
-    for (i = (document.getElementsByClassName('square').length +1); i > 0; i--) {
-        sketchPad.removeChild(sketchPad.firstChild);
-}
+    while (sketchPad.firstChild) {
+        sketchPad.removeChild(sketchPad.lastChild);
+    }
 }
 
 function generateGrid() { //function which generates grid from input w and h
-for (i = 0; i < (10); i++) {
+for (let i = 0; i < (totalSquares); i++) {
     const newSquare = document.createElement("div"); //Creats square
     newSquare.textContent = '1'; //Will delete last, using this to visuallly function
     newSquare.classList.add('square')
