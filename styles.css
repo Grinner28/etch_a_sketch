@@ -1,6 +1,7 @@
 #sketchPadContainer {
     display:grid;
-    grid-template-columns: auto, auto, auto, auto;
+    grid-template-columns: repeat( 2, 1fr);
+    grid-template-rows:repeat(5, 1fr);
     grid-area: sketchPad;
     border: solid blue;
     
@@ -23,5 +24,11 @@ body {
 #optionsContainer {
 grid-area:options
 
+}
+
+.square{
+    border:solid green;
+    justify-self: center;
+        
 }
 
