@@ -4,15 +4,19 @@
     grid-template-rows:repeat(5, 1fr);
     grid-area: sketchPad;
     border: solid blue;
-    
+    row-gap: 0;
+    column-gap: 0;   
+    width: 450px;
+    height: 450px;
+    justify-content: space-evenly;
 }
 
 body {
    display:grid;
-   grid-template-columns: 800px;
-   align-items: center;
+   grid-template-columns: 100px, 400px, 100px, 300px , 100px;
    grid-template-areas: 
-   'sketchPad sketchPad sketchPad sketchPad options';
+   '... sketchPad options ...';
+   
    
 }
 
@@ -24,11 +28,12 @@ body {
 #optionsContainer {
 grid-area:options
 
+
 }
 
 .square{
     border:solid green;
-    justify-self: center;
-        
+    justify-self: stretch;
+     
 }
 
