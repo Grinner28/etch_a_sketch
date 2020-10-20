@@ -6,19 +6,13 @@ var size = 0; // Size sketch pad that user can adjust
 var totalSquares = 25;
 generateGrid(5); //grid displayed when page is opened
 
-
-//Need to ensure grid size is not greater than a max width and max height
-//create if statement to check this
-// if true return your value x exceeeds the max of y
-// if false proceed with generating grid
-
 document.getElementById("newGrid").addEventListener('click', () => { 
     const gridForm = document.forms.gridSizeForm;//Select grid form element assign to gridForm var
     size = Number(gridForm.elements.size.value);//Convert width form value to number and assign to w
-    if (size == "") {
-        alert("Please enter a size between 1 and 50!")
+    if (size == "" | isNaN(size) == true) {
+        alert("Please enter a size value between 1 and 50!")
     } else if (size > 50) {
-        alert("Grid size to large! Max size is 50, please enter a new value")
+        alert("Grid size to large! Max size is 50, please enter a new value") 
         } else {
     totalSquares = size * size;                       //multiple w by h and assign to totalSquares
     deleteGrid(); //run function deleteGrid to clear current grid
