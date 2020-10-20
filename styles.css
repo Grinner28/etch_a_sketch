@@ -1,6 +1,6 @@
 #sketchPadContainer {
     display:grid;
-    grid-template-columns: repeat( 2, 1fr);
+    grid-template-columns: repeat( 5, 1fr);
     grid-template-rows:repeat(5, 1fr);
     grid-area: sketchPad;
     border: solid blue;
@@ -13,27 +13,41 @@
 
 body {
    display:grid;
-   grid-template-columns: 100px, 400px, 100px, 300px , 100px;
    grid-template-areas: 
-   '... sketchPad options ...';
+   '. options . '
+   '. sketchPad .'
+   '. sketchPad .';
+      justify-content: center;
    
    
 }
 
- .dimension {
-    width: 20px;
+.dimension {
+    width: 50px;
     
 }
 
-#optionsContainer {
-grid-area:options
 
+#options{
+    grid-area: options;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 20px
 
 }
 
+.option {
+    margin-left:10px;
+}
+
+#size {
+    width: 20px;
+    margin-left: 0;
+}
+ 
 .square{
-    border:solid green;
+    border:solid lightgrey;
     justify-self: stretch;
      
 }
-
