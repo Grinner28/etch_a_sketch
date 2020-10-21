@@ -3,7 +3,8 @@
     grid-template-columns: repeat( 5, 1fr);
     grid-template-rows:repeat(5, 1fr);
     grid-area: sketchPad;
-    border: solid blue;
+    border: solid #4b4d42;
+    border-width: thin;
     row-gap: 0;
     column-gap: 0;   
     width: 450px;
@@ -17,16 +18,11 @@ body {
    '. options . '
    '. sketchPad .'
    '. sketchPad .';
-      justify-content: center;
-   
-   
-}
-
-.dimension {
-    width: 50px;
+   justify-content: center;
+   background-color: #172832;
     
+   
 }
-
 
 #options{
     grid-area: options;
@@ -38,16 +34,29 @@ body {
 }
 
 .option {
-    margin-left:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #a1872C;
+    font-size: 20px;
+    font-family: monospace
 }
 
+
 #size {
-    width: 20px;
+    width: 30px;
     margin-left: 0;
 }
  
 .square{
-    border:solid lightgrey;
+    
     justify-self: stretch;
-     
+    background-color: #dee9cc;
+    border: solid #4b4d42;
+    border-width: 1px; 
+}
+
+button {
+    background-color: #DEE9CC;
+    border:none;
+    border-radius: 20%;
 }
