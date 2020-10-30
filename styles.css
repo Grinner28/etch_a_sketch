@@ -1,7 +1,7 @@
 #sketchPadContainer {
     display:grid;
-    grid-template-columns: repeat( 5, 1fr);
-    grid-template-rows:repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows:repeat(10, 1fr);
     grid-area: sketchPad;
     border: solid #4b4d42;
     border-width: thin;
@@ -15,9 +15,8 @@
 body {
    display:grid;
    grid-template-areas: 
-   '. options . '
-   '. sketchPad .'
-   '. sketchPad .';
+   '. sketchPad options'
+   '. sketchPad options';
    justify-content: center;
    background-color: #172832;
     
@@ -27,9 +26,9 @@ body {
 #options{
     grid-area: options;
     display: flex;
-    justify-content: center;
-    align-items: baseline;
-    margin-bottom: 20px
+    justify-content: space-evenly;
+    align-items: center;    
+    flex-direction: column;
 
 }
 
@@ -50,7 +49,7 @@ body {
 .square{
     
     justify-self: stretch;
-    background-color: #dee9cc;
+    background-color: white;
     border: solid #4b4d42;
     border-width: 1px; 
 }
@@ -59,4 +58,8 @@ button {
     background-color: #DEE9CC;
     border:none;
     border-radius: 20%;
+}
+
+.squarehover{
+    background-color: #516719;
 }
